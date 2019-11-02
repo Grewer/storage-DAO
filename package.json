@@ -1,0 +1,33 @@
+{
+  "name": "storage-dao",
+  "version": "0.0.2",
+  "description": "a data access object that wraps the storage api",
+  "main": "dist/webStorage.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grewer/storage-DAO.git"
+  },
+  "keywords": [
+    "web",
+    "storage",
+    "localStorage",
+    "sessionStorage",
+    "dao"
+  ],
+  "author": "grewer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Grewer/storage-DAO/issues"
+  },
+  "homepage": "https://github.com/Grewer/storage-DAO#readme",
+  "devDependencies": {
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
