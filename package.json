@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "a data access object that wraps the storage api",
   "main": "dist/webStorage.js",
+  "types": "index.ts",
   "scripts": {
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
