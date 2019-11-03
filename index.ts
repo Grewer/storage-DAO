@@ -43,7 +43,7 @@ class WebStorage {
     return this.preId + key;
   }
 
-  protected set = (key: string, value: string, time?: string | number): IResult => {
+  set = (key: string, value: string, time?: string | number): IResult => {
     let status: number = this.status.SUCCESS;
     const getKey = this.getKey(key);
     try {
@@ -66,7 +66,7 @@ class WebStorage {
     }
   }
 
-  protected get = (key: string): IResult => {
+  get = (key: string): IResult => {
     let status: number = this.status.SUCCESS;
     const getKey: string = this.getKey(key);
     let value: string | null = null;
@@ -112,7 +112,7 @@ class WebStorage {
     return result
   }
 
-  protected remove = (key: string): { status: number, value: null | string } => {
+  remove = (key: string): { status: number, value: null | string } => {
     // 默认为失败
     let status: number = this.status.FAILURE;
     const getKey: string = this.getKey(key);

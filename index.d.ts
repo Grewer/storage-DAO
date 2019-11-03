@@ -5,7 +5,7 @@ interface IResult {
 }
 
 interface WebStorage {
-  set: (key: string, value: string, time?: string | number) => void
+  set: (key: string, value: string, time?: string | number) => IResult
   get: (key: string) => IResult
   remove: (key: string) => { status: number, value: null | string }
 }
