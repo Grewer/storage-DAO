@@ -2,6 +2,15 @@
 
 > a data access object that wraps the storage api
 
+### download
+```
+npm i storage-dao
+```
+or
+```
+yarn add storage-dao
+```
+
 
 ### Usage
 
