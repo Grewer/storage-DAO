@@ -4,6 +4,7 @@ interface IProps {
   type?: 'localStorage' | 'sessionStorage'
   encrypt?: (str: string) => string  // 加密
   decrypt?: (str: string) => string // 解密
+  timeGap?: number
 }
 
 interface IResult {
@@ -25,6 +26,7 @@ class WebStorage {
     OVERFLOW: 3,
     TIMEOUT: 4
   }
+  private timeGap: number = 0;
 
   constructor(props: IProps) {
     this.preId = props.preId;
@@ -36,6 +38,8 @@ class WebStorage {
     this.decrypt = props.decrypt || function (str) {
       return window.atob(str)
     };
+    this.timeGap = props.timeGap || 1000 * 60 * 60 * 12
+    // 默认 12 小时
   }
 
 
@@ -52,7 +56,7 @@ class WebStorage {
       time = new Date(time).getTime() || time.getTime();
     } catch (e) {
       //  传入的时间参数有误时 默认一个月
-      time = new Date().getTime() + 1000 * 60 * 60 * 24 * 31
+      time = new Date().getTime() + this.timeGap
     }
     try {
       this.storage.setItem(getKey, time + this.timeSign + this.encrypt(value));
