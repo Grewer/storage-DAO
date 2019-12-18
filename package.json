@@ -1,6 +1,6 @@
 {
   "name": "storage-dao",
-  "version": "1.0.1",
+  "version": "0.0.7",
   "description": "a data access object that wraps the storage api",
   "main": "dist/webStorage.js",
   "scripts": {

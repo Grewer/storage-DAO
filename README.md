@@ -40,6 +40,7 @@ export default LS
 |type     | no  | 'localStorage' | localStorage or sessionStorage
 |encrypt  | no  |   btoa |  Encryption method| 
 |decrypt  | no  |   atob |Decryption method|
+|timeGap  | no  |   12 hour | Value expiration time|
 
 
 #### methods typing

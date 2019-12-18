@@ -19,6 +19,7 @@ class WebStorage {
   private storage: Storage;
   private encrypt: (str: string) => string;
   private decrypt: (str: string) => string;
+  private timeGap: number = 0;
 
   protected status = {
     SUCCESS: 0,
@@ -26,7 +27,6 @@ class WebStorage {
     OVERFLOW: 3,
     TIMEOUT: 4
   }
-  private timeGap: number = 0;
 
   constructor(props: IProps) {
     this.preId = props.preId;
