@@ -1,8 +1,9 @@
 {
   "name": "storage-dao",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "a data access object that wraps the storage api",
   "main": "dist/webStorage.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
