@@ -18,7 +18,6 @@
       "es7"
     ],
     "sourceMap": true,
-    "allowJs": true,
     "isolatedModules": false,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
@@ -30,7 +29,8 @@
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "declaration": true
   },
   "exclude": [
     "node_modules",
