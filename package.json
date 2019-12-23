@@ -6,7 +6,31 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/test/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    ],
+    "transform": {
+      "^.+\\.[t|j]s?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!(lodash-es|other-es-lib))"
+    ],
+    "testEnvironment": "jsdom",
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ]
   },
   "repository": {
     "type": "git",
@@ -26,9 +50,17 @@
   },
   "homepage": "https://github.com/Grewer/storage-DAO#readme",
   "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-typescript": "^7.7.7",
+    "@types/jest": "^24.0.24",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.6.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
-  }
+  },
+  "dependencies": {}
 }
