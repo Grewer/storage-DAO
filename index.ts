@@ -9,7 +9,7 @@ interface IProps {
 
 interface IResult {
   status: number
-  key: string
+  key?: string
   value: string | null
 }
 

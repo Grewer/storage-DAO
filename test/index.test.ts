@@ -1,18 +1,39 @@
 import webStorage from '../index'
 
+const preId = 'grewer'
+
 const storage = new webStorage({
-  preId: 'grewer'
+  preId
 })
 
-describe('test', () => {
-  storage.set('gre', '123456');
-
+describe('Normal setting',()=>{
   test('set value', () => {
-    expect(storage.get('gre').value).toEqual('123456');
+    localStorage.clear();
+
+    const ins = storage.set('gre', '123456');
+    expect(ins.value).toEqual('123456');
+    expect(ins.status).toEqual(0);
+    expect(ins.key).toEqual(preId + 'gre');
+  })
+})
+
+
+describe('Normal value, delete value', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    storage.set('gre', '123456');
+  });
+
+  test('get value', () => {
+    storage.set('gre', '123456');
+    const ins = storage.get('gre')
+    expect(ins.value).toEqual('123456');
+    expect(ins.status).toEqual(0);
   })
 
   test('remove value', () => {
     storage.remove('gre')
-    expect(storage.get('gre')).toEqual('');  // error  todo
+    const ins = storage.get('gre')
+    expect(ins.value).toEqual(null);
   })
 })
