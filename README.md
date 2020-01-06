@@ -3,22 +3,22 @@
 > a data access object that wraps the storage api
 
 ### download
-```
+```bash
 npm i storage-dao
 ```
 or
-```
+```bash
 yarn add storage-dao
 ```
 
 
 ### import
 module:  
-```
+``` typescript
 import WebStorage from 'storage-dao';
 ```
 browser:
-```
+```html
 <script src="../dist/webStorage.js"></script>
 ```
 

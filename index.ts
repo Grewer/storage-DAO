@@ -13,6 +13,9 @@ interface IResult {
   value: string | null
 }
 
+/**
+ * webStorage class
+ */
 class WebStorage {
   private preId: string;
   private timeSign: string;
@@ -28,6 +31,11 @@ class WebStorage {
     TIMEOUT: 4
   }
 
+  /**
+   * 初始值
+   * @param props
+   * @public
+   */
   constructor(props: IProps) {
     this.preId = props.preId;
     this.timeSign = props.timeSign || '|-|';
@@ -42,11 +50,23 @@ class WebStorage {
     // 默认 12 小时
   }
 
-
+  /**
+   * Insert text at cursor position.
+   *
+   * @param {string} key
+   * @public
+   */
   protected getKey = (key: string): string => {
     return this.preId + key;
   }
 
+  /**
+   * set function
+   * @param key
+   * @param value
+   * @param time
+   * @public
+   */
   set = (key: string, value: string, time?: string | number): IResult => {
     let status: number = this.status.SUCCESS;
     const getKey = this.getKey(key);

@@ -1,6 +1,6 @@
 const path = require('path')
 
-module.exports = [{
+module.exports = {
     module: {
         rules: [
             {
@@ -22,4 +22,4 @@ module.exports = [{
         libraryTarget: 'umd',
         libraryExport: "default",
     }
-}]
+}

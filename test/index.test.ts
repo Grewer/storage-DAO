@@ -11,9 +11,9 @@ describe('Normal setting', () => {
     localStorage.clear();
 
     const ins = storage.set('gre', '123456');
-    expect(ins.value).toEqual('123456');
-    expect(ins.status).toEqual(0);
-    expect(ins.key).toEqual(preId + 'gre');
+    expect(ins.value).toBe('123456');
+    expect(ins.status).toBe(0);
+    expect(ins.key).toBe(preId + 'gre');
   })
 })
 
@@ -27,14 +27,14 @@ describe('Normal value, delete value', () => {
   test('get value', () => {
     storage.set('gre', '123456');
     const ins = storage.get('gre')
-    expect(ins.value).toEqual('123456');
-    expect(ins.status).toEqual(0);
+    expect(ins.value).toBe('123456');
+    expect(ins.status).toBe(0);
   })
 
   test('remove value', () => {
     storage.remove('gre')
     const ins = storage.get('gre')
-    expect(ins.value).toEqual(null);
+    expect(ins.value).toBe(null);
   })
 })
 
@@ -45,19 +45,19 @@ describe('Special case', () => {
 
   test('get value', () => {
     const ins = storage.get('gre')
-    expect(ins.value).toEqual(null);
-    expect(ins.status).toEqual(1);
+    expect(ins.value).toBe(null);
+    expect(ins.status).toBe(1);
   })
 
   test('remove value', () => {
     const ins = storage.remove('gre')
-    expect(ins.status).toEqual(1);
-    expect(ins.value).toEqual(null);
+    expect(ins.status).toBe(1);
+    expect(ins.value).toBe(null);
   })
 })
 
-describe('timeout', () => {
-  test('set value', async () => {
+describe('Timeout', () => {
+  test('get value', async () => {
     storage.set('gre', '123456');
 
     const item = localStorage.getItem(preId + 'gre')
