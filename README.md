@@ -43,20 +43,6 @@ export default LS
 |timeGap  | no  |   12 hour | Value expiration time|
 
 
-#### methods typing
-```typescript
-interface IResult {
-  status: number
-  key: string
-  value: string | null
-}
-{
-  set: (key: string, value: string, time?: string | number) => IResult
-  get: (key: string) => IResult
-  remove: (key: string) => { status: number, value: null | string }
-}
-```
-
 ### Change Log
 
 

@@ -7,14 +7,17 @@ interface IProps {
   timeGap?: number
 }
 
-interface IResult {
+export interface IResult {
   status: number
   key?: string
   value: string | null
 }
 
 /**
- * webStorage class
+ * webStorage
+ * class 函数
+ * @param {string} preId
+ * @version ./package.json
  */
 class WebStorage {
   private preId: string;
@@ -32,9 +35,8 @@ class WebStorage {
   }
 
   /**
-   * 初始值
-   * @param props
-   * @public
+   * 初始化函数
+   * @constructor 123
    */
   constructor(props: IProps) {
     this.preId = props.preId;
@@ -50,28 +52,23 @@ class WebStorage {
     // 默认 12 小时
   }
 
-  /**
-   * Insert text at cursor position.
-   *
-   * @param {string} key
-   * @public
-   */
   protected getKey = (key: string): string => {
     return this.preId + key;
   }
 
   /**
-   * set function
-   * @param key
-   * @param value
-   * @param time
+   * 设置值的函数
    * @public
+   * @returns `{
+   *  status: number
+   *  key?: string
+   *  value: string | null
+   *  }`
    */
   set = (key: string, value: string, time?: string | number): IResult => {
     let status: number = this.status.SUCCESS;
     const getKey = this.getKey(key);
     try {
-      // 获取时间戳
       // @ts-ignore
       time = new Date(time).getTime() || time.getTime();
     } catch (e) {
@@ -90,6 +87,14 @@ class WebStorage {
     }
   }
 
+  /**
+   * 获取值的函数
+   * @public
+   * @returns `{
+   *  status: number
+   *  value: string | null
+   *  }`
+   */
   get = (key: string): IResult => {
     let status: number = this.status.SUCCESS;
     const getKey: string = this.getKey(key);
@@ -136,6 +141,14 @@ class WebStorage {
     return result
   }
 
+  /**
+   * 清除某个值
+   * @public
+   * @returns `{
+   *  status: number
+   *  value: string | null
+   *  }`
+   */
   remove = (key: string): { status: number, value: null | string } => {
     // 默认为失败
     let status: number = this.status.FAILURE;

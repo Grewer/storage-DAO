@@ -6,7 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "webpack --mode production",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "server": "styleguidist server",
+    "web-build": "styleguidist build"
   },
   "jest": {
     "testMatch": [
