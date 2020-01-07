@@ -23,7 +23,7 @@ browser:
 ```
 
 ### Usage
-```typescript
+```typescript static
 
 const LS = new WebStorage({
         preId: 'Grewer__',
